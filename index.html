@@ -1,4 +1,56 @@
 <!DOCTYPE HTML>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>使用原生 dialog 彈出介面</title>
+  <style>
+    dialog {
+      border: none;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    dialog::backdrop {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .button {
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Learn More 按鈕 -->
+  <button class="button" id="openDialog">Learn More</button>
+
+  <!-- 對話框 -->
+  <dialog id="infoDialog">
+    <h2>技能專長</h2>
+    <p>這裡是您的技能專長介紹內容。</p>
+    <button class="button" id="closeDialog">關閉</button>
+  </dialog>
+
+  <script>
+    const openBtn = document.getElementById('openDialog');
+    const closeBtn = document.getElementById('closeDialog');
+    const dialog = document.getElementById('infoDialog');
+
+    openBtn.addEventListener('click', () => {
+      dialog.showModal();
+    });
+
+    closeBtn.addEventListener('click', () => {
+      dialog.close();
+    });
+  </script>
+
+</body>
+
 
 <html>
 	<head>
